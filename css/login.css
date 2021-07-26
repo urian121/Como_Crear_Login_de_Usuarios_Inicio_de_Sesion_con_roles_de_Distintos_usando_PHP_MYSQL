@@ -1,0 +1,222 @@
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  background: -webkit-linear-gradient(#fff 0%, #f2f7ff 100%);
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.active-back {
+  color: #919cb2 !important;
+}
+.active-back:hover {
+  cursor: pointer;
+  color: #286efa !important;
+}
+.back {
+  position: absolute;
+  height: 20px;
+  width: 40px;
+  color: #d6dae4;
+  display: block;
+  transition: 0.3s;
+  margin-left: 20px;
+  margin-top: -30px;
+  font-size: 24px;
+}
+.shift {
+  left: -330px !important;
+}
+h3 {
+  position: absolute;
+  margin-left: 85px;
+  font-size: 35px;
+  font-weight: 700;
+  color: #4f5c76;
+}
+input {
+  width: 320px;
+  height: 45px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  padding-left: 10px;
+  transition: 0.3s;
+}
+input::-webkit-input-placeholder {
+  font-size: 14px;
+}
+input:focus {
+  border: 1px solid #286efa !important;
+  outline-width: 0;
+}
+button {
+  margin-top: 30px;
+  width: 262px;
+  height: 40px;
+  background: #286efa;
+  color: #fff;
+  font-size: 14px;
+  border: 1px solid #286efa;
+  border-radius: 3px;
+  margin-left: 40px;
+}
+button:hover {
+  background: #3c82ff;
+  cursor: pointer;
+}
+.form {
+  position: relative;
+  margin: 0 auto;
+  width: 400px;
+  height: 400px;
+  background: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.form form {
+  margin-top: 50px;
+  width: 750px;
+}
+.form form .inputs {
+  position: relative;
+  left: 65px;
+  top: 150px;
+  transition: 0.3s;
+}
+.form form .inputs .email {
+  float: left;
+  position: relative;
+  margin-left: -25px;
+  margin-top: -20px;
+}
+.form form .inputs .password {
+  float: right;
+  position: relative;
+  width: 350px;
+  margin-right: 30px;
+  margin-top: -18px;
+}
+.warning {
+  color: #f00;
+  font-size: 15px;
+}
+.loader {
+  margin-left: 22%;
+  margin-top: 22%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 5px solid #e8ebf1;
+  border-top-color: #286efa;
+  animation: spinner 1s infinite linear;
+}
+@-moz-keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.materialdesignBackground {
+    margin: 0;
+    padding: 0;
+    background: url('../images/fondo.jpg') no-repeat center top;
+    background-size: cover;
+    height: 100vh;
+}
+
+.myContect{
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 280px) and (max-width: 400px) {
+input {
+  width: 220px;
+}
+
+button {
+  width: 220px;
+  margin-left: 0px;
+}
+
+.form {
+  width: 290px;
+}
+.form h3{
+  margin-left: 35px;
+}
+.form form .inputs .password{
+  margin-right: 48px;
+}
+
+}
+
+
+
+/******msj notificacion **/
+#mini-notification {
+    display: none;
+    position: fixed;
+    cursor: pointer;
+    width: 100%;
+    height: 100px;
+    background: #ff6252;
+    font-size: 14px;
+    text-align: center;
+    z-index:9999;
+    -moz-box-shadow:0 0em 0.5em rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow:0 0em 0.5em rgba(0, 0, 0, 0.3);
+    box-shadow:0 0em 0.5em rgba(0, 0, 0, 0.3);
+}
+#mini-notification strong{
+    color: #cccccc !important;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+#mini-notification p{
+    color: #fff !important;
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 900;
+    padding: 25px 5px 2px 5px;
+}
+#mini-notification span{
+    color: #444;
+    font-size: 20px;
+}
+
+/*FIN DE MSJ   */
