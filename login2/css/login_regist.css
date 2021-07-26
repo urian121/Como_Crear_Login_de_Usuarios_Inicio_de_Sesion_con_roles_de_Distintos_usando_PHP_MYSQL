@@ -79,4 +79,25 @@ label{
   text-align: right;
 }
 
+.recuperarPass{
+ color: #333;
+ font-weight: bold; 
+}
 
+#volver{
+  float: right;
+  color: #333;
+}
+.miBtn{
+  background-color:#d21f22 !important;
+}
+
+#olvidar{
+float: right;
+color:#1f3c88;  
+}
+
+#nuevaCuenta{
+  float: left;
+  color: #333;
+}

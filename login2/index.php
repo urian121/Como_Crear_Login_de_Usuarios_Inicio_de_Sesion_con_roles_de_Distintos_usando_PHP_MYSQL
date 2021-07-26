@@ -21,66 +21,62 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    }
     </style>
   </head>
   <body class="backgroundFondo">
 
 
-        <div class="container"> 
-            <div class="world-latest-articles">
-                <div class="row">
-                  <div class="col-12 col-lg-12">
+<div class="container"> 
+<div class="world-latest-articles">
+    <div class="row">
+      <div class="col-12 col-lg-12">
 
-                  <div class="form">
-                    <div id="signup">
-                        <h1 class="text-center" style="color: #333; font-weight: bold;">Iniciar Sesión</h1>
-                        <form action="panel/verificar_sesion.php" method="post">
-                            <div class="field-wrap">
-                                <label>Correo</label>
-                                <input type="email" name="email" required autocomplete="off"/>
-                            </div>
-                            <div class="field-wrap">
-                                <label>Contraseña</label>
-                                <input type="password" name="password" required autocomplete="off"/>
-                            </div>
-                            <br>
-                            <input  style="background-color:#d21f22; !important;" type="submit" class="button button-block mb-4" value="ENTRAR"/>
-
-                             <a href="#" id="volverOne" title="Volver" style="float: left; color: #333;">
-                                    Crear Cuenta..!
-                                </a>
-
-                                <a href="#" id="olvidar" title="Recuperar Clave" style="float: right; color:#1f3c88;">
-                                    Recuperar Clave
-                                </a>
-                            <br><br>    
-                              
-                        </form>
-                    </div>
-
-
-                    <div id="recuperarclave">
-                        <h1 class="text-center mb-5" style="color: #333; font-weight: bold;">
-                        Recuperar tu Clave</h1>
-                        <form action="recuperarClave.php" method="post">
-                            <div class="field-wrap">
-                                <label>Correo</label>
-                                <input type="email" name="email" required autocomplete="off"/>
-                            </div>
-                            
-                            <br>
-                        <a href="#" id="volver" title="Volver" style="float: right; color: #333;">Volver</a>
-                        <br><br> 
-                              <input style="background-color:#d21f22 !important;" type="submit" class="button button-block" value="RECUPERAR CLAVE"/>
-                              <br><br>
-                        </form>
-                    </div>
-
+    <div class="form">
+        <div id="signup">
+            <h1 class="text-center" style="color: #333; font-weight: bold;">Iniciar Sesión</h1>
+            <form action="panel/verificar_sesion.php" method="post">
+                <div class="field-wrap">
+                    <label>Correo</label>
+                    <input type="email" name="email" required autocomplete="off"/>
                 </div>
-            </div>
+                <div class="field-wrap">
+                    <label>Contraseña</label>
+                    <input type="password" name="password" required autocomplete="off"/>
+                </div>
+
+                <input type="submit" class="button button-block mb-3 mt-5 miBtn mt-3" value="ENTRAR"/>
+
+                <a href="#" id="nuevaCuenta" title="Volver">Crear Cuenta..!</a>
+
+                <a href="#" id="olvidar" title="Recuperar Clave">Recuperar Clave</a>
+                <br><br>    
+                  
+            </form>
         </div>
-    </div>   
+
+
+        <div id="recuperarclave">
+            <h1 class="text-center mb-5 recuperarPass">
+                Recuperar tu Clave
+            </h1>
+            <form action="recuperarClave.php" method="post">
+                <div class="field-wrap">
+                    <label>Correo</label>
+                    <input type="email" name="email" required autocomplete="off"/>
+                </div>
+            
+                <input type="submit" class="button button-block miBtn mt-5" value="RECUPERAR CLAVE"/>
+
+                <a href="#" id="volver" class="mt-3 mb-4" title="Volver">Volver</a>
+                <br><br>
+            </form>
+        </div>
+
+    </div>
+</div>
+</div>
+</div>   
 </div>
 
 
