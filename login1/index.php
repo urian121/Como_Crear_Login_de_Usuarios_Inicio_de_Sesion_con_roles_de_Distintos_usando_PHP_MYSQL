@@ -4,11 +4,12 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  		<link rel="shortcut icon" type="image/x-icon" href="assets/img/logo.png">
-		<title>Mi Bank :: Login</title>
+  		<link rel="shortcut icon" type="image/x-icon" href="assets/images/perfil.jpeg">
+		<title>Login con PHP y MYSQL :: Urian Viera</title>
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="css/cargando.css">
-		<link rel="stylesheet" type="text/css" href="css/login.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/cargando.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/login.css">
+        <link rel="stylesheet" href="assets/css/notificacion.css">
 	</head>
 <body class="materialdesignBackground">
 		
@@ -20,29 +21,20 @@
 
 
 <?php
-if(isset($_REQUEST['errorS'])){ ?>
-        <div id="mini-notification">
-            <p>
-               <strong style="color:#333 !important;"> Ops.! ! </strong>
-              Algunos datos son incorrectos, verifique.
-            </p>
-        </div>
-<?php } ?>
+if(isset($_REQUEST['errorS'])){ 
+    echo '<script>alert("Ops...! Datos Incorrectos verifique de nuevo.")</script>';
+ } ?>
 
 <?php
-if(isset($_REQUEST['ccc'])){ ?>
-        <div id="mini-notification">
-            <p>
-               <strong style="color:#333 !important;"> Felicitaciones </strong>
-              La sesión fue cerrada correctamente.
-            </p>
-        </div>
+if(isset($_REQUEST['cc'])){ ?>
+        <div class="alert show showAlert">
+         <span class="msg">Felicitaciones, Sesión cerrada correctamente.</span>
+      </div>
 <?php } ?>
 ?>
 
 
 <div class="myContect">
-
 <div class="form">
 <form action="verificar_sesion.php" method="POST">
 
@@ -73,16 +65,21 @@ if(isset($_REQUEST['ccc'])){ ?>
 
 
 <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
-<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="assets/js/login.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
  $(window).load(function() {
 	    $(".cargando").fadeOut(1000);
 	  });  
+
+    setTimeout(function(){
+        //$('.alert').addClass("hide");
+        $(".alert").fadeOut(100);
+       },5000);
 });
 
 
-
 </script>
-	</body>
-	</html>	
+
+</body>
+</html>	

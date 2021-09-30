@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-  <title>Compratucarro.net</title>
+  <title>Login con PHP y MYSQL</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
-    <link rel="shortcut icon" type="image/x-icon" href="images/logo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo.png">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900|Roboto+Mono:300,400,500"> 
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/login_regist.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/login_regist.css">
 
     <style type="text/css">
     .backgroundFondo{
-    background: url('images/fondo.jpg') no-repeat center top;
+    background: url('assets/images/fondo.jpg') no-repeat center top;
     background-size: cover;
     height: 100vh;
 
@@ -35,7 +35,7 @@
     <div class="form">
         <div id="signup">
             <h1 class="text-center" style="color: #333; font-weight: bold;">Iniciar Sesión</h1>
-            <form action="panel/verificar_sesion.php" method="post">
+            <form action="verificarDatos/verificar_sesion.php" method="post">
                 <div class="field-wrap">
                     <label>Correo</label>
                     <input type="email" name="email" required autocomplete="off"/>
