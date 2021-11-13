@@ -13,7 +13,7 @@ if (isset($_SESSION['email']) != "") {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-      <link rel="shortcut icon" type="image/x-icon" href="assets/images/perfil.jpeg">
+      <link rel="shortcut icon" type="image/x-icon" href="assets/perfil.jpeg">
     <title>Inicio :: <?php echo $nameUser; ?></title>
   </head>
   <body>
