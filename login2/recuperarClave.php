@@ -60,6 +60,6 @@ $headers .= "Return-path:";
 $headers .= "Cc:"; 
 $headers .= "Bcc:"; 
 
-mail($para, $titulo, $mensaje, $headers);
+@mail($para, $titulo, $mensaje, $headers);
 
 ?>
