@@ -17,13 +17,12 @@ if (isset($_SESSION['email']) != "") {
     <title>Inicio :: <?php echo $nameUser; ?></title>
   </head>
   <body>
-<nav class="navbar navbar-light bg-light mb-5" style="background-color: #286efa !important;">
+<nav class="navbar navbar-light bg-light mb-5" style="background-color: #f7c600 !important;">
   <div class="container-fluid">
     <a class="navbar-brand" href="https://blogangular-c7858.web.app" style="color:#fff;">
-      <img src="assets/perfil.jpeg" alt="" width="50" height="50" class="d-inline-block align-text-top">
-      Canal WebDeveloper
+     <strong style="color:#333;">Canal WebDeveloper</strong>
     </a>
-    <span><a href="cerrar.php" style="color: #fff;">Salir</a></span>
+    <span><a href="cerrar.php" style="color: #333; font-weight: bold;">Salir</a></span>
   </div>
 </nav>
 
