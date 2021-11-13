@@ -1,12 +1,11 @@
 <?php
-include('panel/config.php');
+include('verificarDatos/config.php');
 
 $logitudPass = 5;
 $miPassword  = substr( md5(microtime()), 1, $logitudPass);
 
 
 $clave      = $miPassword;
-
 $correo     = $_REQUEST['email'];
 $consulta   = mysqli_query ($con, "SELECT * FROM clientes WHERE email ='".$correo."'");
 $cant = mysqli_num_rows($consulta);
@@ -26,62 +25,41 @@ echo "<script type='text/javascript'>
 
 
 //ENVIANDO INFORMACION AL EMAIL DEL CLIENTE
-$paraCliente    = $correo;
-$tituloCliente  = "Clave Temporal";
+$para    = $correo;
 $titulo  = "Clave Temporal";
-$mensaje = "<html>".
-"<head><title>Email desde Compratucarro.net</title>".
-"<style>* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-    font-family: 'Nunito', sans-serif;
-    color: #333;
-    font-size: 14px;
-    background:#222;
-}
-.contenedor{
-    width: 80%;
-    min-height:auto;
-    text-align: center;
-    margin: 0 auto;
-    padding: 40px;
-    background: #ececec;
-    border-top: 3px solid #E64A19;
-    }
-    .hola{
-    color:#333;
-    font-size:25px;
-    font-weight:bold;
-    }
-    img{
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    padding:0px 0px 20px 0px;
-   }
-   .logo{
-    width:30%;
-   }
-    </style></head>".
-        "<body>" .
-            "<div class='contenedor'>".
-                "<p>&nbsp;</p>" .
-                "<p>Recuerde sus Datos de acceso al portal compratucarro.net son:</p>" .
-                "<p>&nbsp;</p>" .
-    			"<p> Usuario ".$correo."</p>".
-    			"<p> CLAVE TEMPORAL ".$clave."</p>".
-                "<p>&nbsp;</p>" .
-                "<p>&nbsp;</p>" .
-		    "</div>" .
-        "</body>" .
-    "</html>";
+$mensaje = "
+<!doctype html>
+<html lang='es'>
+<head>
+<title>Royal Canin</title>
+</head>
+    <body>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <div style='width: 80%; margin:0 auto; background-color: #ffffff; color: #34495e; text-align: center;font-family: sans-serif'>
+            <h2 style='font-size: 16px; color: #34495e; margin: 0 0 7px;'>&#161;Felicitaciones&#33; </h2>
+            <p>&nbsp;</p>
+            <p>su nueva clave temporal es: ".$clave."</p>
+            <p>&nbsp;</p>
+            <img style='padding: 0; display: block; width:100%; max-width:600px; margin:0 auto;' src='https://blogangular-c7858.web.app/assets/images/work.gif'>
+            <p>&nbsp;</p>
+        </div>
+    </body>
+</html>
+"; 
 
-$cabeceras  = 'MIME-Version: 1.0' . "\r\n";
-$cabeceras .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-$cabeceras .= 'From: Bogota Colombia<info@fzapata@sgbcolombia.com >';
-$enviado = mail($paraCliente, $titulo, $mensaje, $cabeceras);
+//Cabecera Obligatoria
+$headers = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+$headers .= 'From: Bono Royal Canin <programadorphp2017@gmail.com>' . "\r\n";
+$headers .= 'Cc: programadorphp2017@gmail.com' . "\r\n";
+
+//OPCIONAR
+$headers .= "Reply-To: "; 
+$headers .= "Return-path:"; 
+$headers .= "Cc:"; 
+$headers .= "Bcc:"; 
+
+mail($para, $titulo, $mensaje, $headers);
 
 ?>

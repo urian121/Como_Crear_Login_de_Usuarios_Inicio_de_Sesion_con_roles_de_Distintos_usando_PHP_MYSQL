@@ -19,7 +19,6 @@ if ($row = mysqli_fetch_assoc($QueryResul)) {
 	 $_SESSION['id']		= $row['id'];
 
 	echo '<meta http-equiv="refresh" content="0;url=inicio.php?c=1">';	
-	
 }else{
 	echo '<meta http-equiv="refresh" content="0;url=index.php?errorS=1">';
 }

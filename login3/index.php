@@ -8,6 +8,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">  
 	<link rel="stylesheet" href="assets/css/estilos.css">
+	<link rel="shortcut icon" type="image/x-icon" href="assets/perfil.jpeg">
 	<title>Login sesión con PHP y MySQL</title>
 </head>
 <body>
@@ -19,22 +20,22 @@
 					<p> - - - - - - - - - - - - - - - -</p>
 				</div>
 		
-				<form class="formulario" id="formulario" action="verificar_sesion" method="POST">
+				<form class="formulario" id="formulario" action="validarSesion.php" method="POST">
 					<label for="nombre">Usuario</label>
+					<div class="contenedor-input">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+							<path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+						</svg>
+						<input type="email" id="email" name="email" required="true">
+					</div>
+		
+					<label for="correo">Correo Electrónico</label>
 					<div class="contenedor-input">
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
 							<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
 							<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
 						</svg>
-						<input type="text" id="email" name="email">
-					</div>
-		
-					<label for="correo">Correo Electrónico</label>
-					<div class="contenedor-input">
-						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-							<path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
-						</svg>
-						<input type="email" id="password" name="password">
+						<input type="password" id="password" name="password" required>
 					</div>
 					
 					<div class="contenedor-boton">

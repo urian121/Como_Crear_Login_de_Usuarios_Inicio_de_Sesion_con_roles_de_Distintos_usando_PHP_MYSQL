@@ -1,10 +1,6 @@
 <?php
 session_start();
 include('conexion/config.php');
-if (isset($_SESSION['email']) != "") {
-    header("Location: home.php");
-}
-
 
 $correo 		= $_REQUEST['email'];
 $clave  		= $_REQUEST['password'];

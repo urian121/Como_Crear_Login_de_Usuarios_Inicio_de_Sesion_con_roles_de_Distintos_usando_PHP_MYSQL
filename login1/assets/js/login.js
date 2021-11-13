@@ -52,7 +52,6 @@ $(".login").on("click", (event) => {
 	var password = $("input#password").val();
 	var email =  $("input#email").val();
 
-
 	location.href="verificar_sesion.php?password="+password+"&email="+email; 
 
 	$("form").empty();

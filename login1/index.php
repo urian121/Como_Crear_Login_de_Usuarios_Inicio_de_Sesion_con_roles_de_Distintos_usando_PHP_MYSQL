@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   		<link rel="shortcut icon" type="image/x-icon" href="assets/images/perfil.jpeg">
-		<title>Login con PHP y MYSQL :: Urian Viera</title>
+		<title>Login - sesión con PHP y MYSQL :: Urian Viera</title>
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="assets/css/cargando.css">
 		<link rel="stylesheet" type="text/css" href="assets/css/login.css">
@@ -21,15 +21,17 @@
 
 
 <?php
-if(isset($_REQUEST['errorS'])){ 
-    echo '<script>alert("Ops...! Datos Incorrectos verifique de nuevo.")</script>';
- } ?>
+if(isset($_REQUEST['errorS'])){ ?>
+    <div class="alert show showAlert">
+        <span class="msg" style="color: #333;">Ops...! Datos Incorrectos verifique de nuevo</span>
+    </div>
+ <?php } ?>
 
 <?php
 if(isset($_REQUEST['cc'])){ ?>
-        <div class="alert show showAlert">
-         <span class="msg">Felicitaciones, Sesión cerrada correctamente.</span>
-      </div>
+    <div class="alert show showAlert">
+        <span class="msg">Felicitaciones, Sesión cerrada correctamente.</span>
+    </div>
 <?php } ?>
 ?>
 
@@ -73,7 +75,6 @@ $(document).ready(function(){
 	  });  
 
     setTimeout(function(){
-        //$('.alert').addClass("hide");
         $(".alert").fadeOut(100);
        },5000);
 });
