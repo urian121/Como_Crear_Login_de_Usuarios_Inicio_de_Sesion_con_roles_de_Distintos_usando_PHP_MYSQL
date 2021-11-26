@@ -1,3 +1,17 @@
+<?php
+if(isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
+	include('conexion/config.php');
+	$emailUser 		 = $_REQUEST['emailUser'];
+	$passwordUser    = $_REQUEST['passwordUser'];
+	$nameUser  		 = $_REQUEST['nameUser'];
+
+	$PasswordHash = password_hash($passwordUser, PASSWORD_BCRYPT); //Incriptando clave
+
+	$queryInsert  = ("INSERT INTO myusers(emailUser,passwordUser, nameUser) VALUES ('$emailUser','$PasswordHash','$nameUser')");
+	$resultInsert = mysqli_query($con, $queryInsert);
+	
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,11 +34,19 @@ Son extremadamente rápidos y vulnerables a los ataques de fuerza bruta. Una GPU
 		<div class="columna-izquierda">
 			<div class="registro activo" id="registro">
 				<div class="header">
-					<h1>¡Iniciar sesión!</h1>
+					<h1>¡Crear mi cuenta!</h1>
 					<p> - - - - - - - - - - - - - - - -</p>
 				</div>
-		
-				<form class="formulario" id="formulario" action="validarSesion.php" method="POST">
+
+				<form class="formulario" id="formulario" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+					<label for="nameUser">Nombre del Usuario</label>
+					<div class="contenedor-input">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+							<path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+							<path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+						</svg>
+						<input type="text" id="nameUser" name="nameUser" required="true">
+					</div>
 					<label for="nombre">Correo Electrónico</label>
 					<div class="contenedor-input">
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
@@ -43,9 +65,7 @@ Son extremadamente rápidos y vulnerables a los ataques de fuerza bruta. Una GPU
 					</div>
 					
 					<div class="contenedor-boton">
-						<button type="submit">
-							Entrar ahora
-						</button>
+					<input type="submit" name="submit" value="Crear Cuenta">
 					</div>
 				</form>
 			</div>

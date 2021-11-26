@@ -1,10 +1,10 @@
 <?php
 session_start();
 include('conexion/config.php');
-if (isset($_SESSION['email']) != "") {
-    $nameUser   = $_SESSION['fullName'];
-    $email      = $_SESSION['email'];
-    $idUser     = $_SESSION['id'];
+if (isset($_SESSION['emailUser']) != "") {
+    $nameUser       = $_SESSION['nameUser'];
+    $emailUser     = $_SESSION['emailUser'];
+    $IdUser        = $_SESSION['IdUser'];
 ?>
 
 <!doctype html>
@@ -22,7 +22,7 @@ if (isset($_SESSION['email']) != "") {
     <a class="navbar-brand" href="https://blogangular-c7858.web.app" style="color:#fff;">
      <strong style="color:#333;">Canal WebDeveloper</strong>
     </a>
-    <span><a href="cerrar.php" style="color: #333; font-weight: bold;">Salir</a></span>
+    <span><a href="salirSesion.php" style="color: #333; font-weight: bold;">Salir</a></span>
   </div>
 </nav>
 
