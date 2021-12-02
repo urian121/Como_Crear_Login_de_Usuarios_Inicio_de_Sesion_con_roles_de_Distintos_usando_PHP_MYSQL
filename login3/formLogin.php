@@ -1,19 +1,5 @@
-<?php
-if(isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
-	include('conexion/config.php');
-	$emailUser 		 = $_REQUEST['emailUser'];
-	$passwordUser    = $_REQUEST['passwordUser'];
-	$nameUser  		 = $_REQUEST['nameUser'];
-
-	$PasswordHash = password_hash($passwordUser, PASSWORD_BCRYPT); //Incriptando clave
-
-	$queryInsert  = ("INSERT INTO myusers(emailUser,passwordUser, nameUser) VALUES ('$emailUser','$PasswordHash','$nameUser')");
-	$resultInsert = mysqli_query($con, $queryInsert);
-	
-}
-?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,12 +10,15 @@ if(isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
 	<link rel="stylesheet" href="assets/css/estilos.css">
 	<link rel="shortcut icon" type="image/x-icon" href="assets/perfil.jpeg">
 	<title>Login sesión con PHP y MySQL</title>
+
+	<!--Notificacion -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>
 <body>
-	<!-- PHP - Forma segura de almacenar contraseñas -->
-	<!---Nunca almacene las contraseñas como texto sin formato. Es tan bueno como no tener ninguna contraseña.
-Nunca use MD5 o SHA1 para hash. 
-Son extremadamente rápidos y vulnerables a los ataques de fuerza bruta. Una GPU potente podría romper fácilmente el hash md5.-->
+<!--Precarga --->
+<div id='spinner'></div>
+
+
 	<div class="contenedor">
 		<div class="columna-izquierda">
 			<div class="registro activo" id="registro">
@@ -38,7 +27,7 @@ Son extremadamente rápidos y vulnerables a los ataques de fuerza bruta. Una GPU
 					<p> - - - - - - - - - - - - - - - -</p>
 				</div>
 
-				<form class="formulario" id="formulario" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+				<form class="formulario" id="formulario" action="CreateUser.php" method="POST">
 					<label for="nameUser">Nombre del Usuario</label>
 					<div class="contenedor-input">
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -65,18 +54,9 @@ Son extremadamente rápidos y vulnerables a los ataques de fuerza bruta. Una GPU
 					</div>
 					
 					<div class="contenedor-boton">
-					<input type="submit" name="submit" value="Crear Cuenta">
+						<input type="submit" name="submit" value="Crear Cuenta" id="btn-login">
 					</div>
 				</form>
-			</div>
-
-			<div class="header exito" id="exito">
-				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
-					<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-					<path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
-				</svg>
-				<h1>Registrado!</h1>
-				<p>Te mandaremos un correo electrónico si resultas ganador.</p>
 			</div>
 		</div>
 
@@ -85,5 +65,12 @@ Son extremadamente rápidos y vulnerables a los ataques de fuerza bruta. Una GPU
 		</div>
 	</div>
 
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+	<script src="assets/js/script.js"></script>
+	<script>
+		toastr.info('Hola, llena todos los campos para crear tu cuenta.');
+	</script>
 </body>
 </html>

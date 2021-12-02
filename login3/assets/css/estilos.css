@@ -78,6 +78,7 @@ label {
 }
 
 .exito {
+	background-color: red;
 	display: none;
 	height: 100%;
 	flex-direction: column;
@@ -149,6 +150,7 @@ button {
 }
 
 button:hover {
+	cursor: pointer;
 	background: var(--primario);
 	color: #fff;
 }
@@ -158,3 +160,74 @@ button svg {
 	width: 20px;
 	height: 20px;
 }
+
+#btn-login{
+	font-family: 'Quicksand', sans-serif;
+	font-size: 16px;
+	border-radius: 5px;
+	margin-top: 20px;
+	background: none;
+	height: 50px;
+	color: var(--primario);
+	padding: 0 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid var(--primario);
+	cursor: pointer;
+	transition: .3s ease all;
+	outline: none;
+}
+#btn-login:hover {
+	cursor: pointer;
+	background: var(--primario);
+	color: #fff;
+}
+
+#btn-login svg {
+	margin-left: 10px;
+	width: 20px;
+	height: 20px;
+}
+
+
+/*Sniper
+https://codepen.io/wang0nya/pen/bzwQPr 
+https://codepen.io/EastingAndNorthing/pen/aNWrZz
+https://codepen.io/vineethtrv/pen/NWxZqMM
+*/
+#spinner:not([hidden]) {
+	position: fixed;
+	/*	position: fixed;*/
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0px 10px;
+	z-index:1;
+	background-color: #3333;
+  }
+  
+  #spinner::after {
+	content: "";
+	width: 50px;
+	height: 50px;
+	border: 2px solid #f3f3f3;
+	border-top: 3px solid #f25a41;
+	border-radius: 100%;
+	will-change: transform;
+	animation: spin 1s infinite linear
+  }
+  
+  @keyframes spin {
+	from {
+	  transform: rotate(0deg);
+	}
+	to {
+	  transform: rotate(360deg);
+	}
+  }
+  
