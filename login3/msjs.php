@@ -7,7 +7,7 @@ if(isset($_REQUEST['b'])){ ?>
 </script>
 <?php } 
 //Sesion cerrada correctamente
-if(isset($_REQUEST['cc'])){ ?>
+if(isset($_REQUEST['sc'])){ ?>
 	<script type='text/javascript'>
 		toastr.success('Felicitaciones, la sesión fue cerrada con éxito.');
 	</script>
