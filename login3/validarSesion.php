@@ -34,7 +34,7 @@ if(($_SERVER["REQUEST_METHOD"] == "POST")){
 				cualquiera de los múltiples hash que puede generar password_hash (recuerde que cada vez que se ejecuta,
 					aún a partir de la misma contraseña, genera uno diferente) con la contraseña que se le suministre.*/
 				if(password_verify($passwordUser, $passwordBD)) {
-					session_start();
+					session_start(); //Creando la sesion ya que los datos son validos
 					$_SESSION['IdUser'] 	= $rowData['IdUser']; 
 					$_SESSION['nombre']     = $rowData['nombre'];
 					$_SESSION['nameUser']	= $rowData['nameUser'];
