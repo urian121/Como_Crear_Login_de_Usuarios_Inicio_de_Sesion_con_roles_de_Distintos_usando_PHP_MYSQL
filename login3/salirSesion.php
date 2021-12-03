@@ -12,5 +12,5 @@ $email = $_REQUEST['email'];
 $Update = ("UPDATE myusers SET sesionHasta='$sesionHasta' WHERE emailUser='$email' ");
 $resultado = mysqli_query($con, $Update);
 
-header("Location: index.php?cc=1");
+header("Location: index.php?sc=1");
 ?>
