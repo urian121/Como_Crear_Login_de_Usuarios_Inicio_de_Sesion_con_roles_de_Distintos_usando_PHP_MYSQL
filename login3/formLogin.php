@@ -7,6 +7,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">  
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
 	<link rel="stylesheet" href="assets/css/estilos.css">
 	<link rel="shortcut icon" type="image/x-icon" href="assets/perfil.jpeg">
 	<title>Login sesión con PHP y MySQL</title>
@@ -56,7 +57,13 @@
 					<div class="contenedor-boton">
 						<input type="submit" name="submit" value="Crear Cuenta" id="btn-login">
 					</div>
+					<div class="contenedor-boton">
+						<a href="./">
+						<i class="zmdi zmdi-undo zmdi-hc-lg"></i>
+							Volver</a>
+					</div>
 				</form>
+				
 			</div>
 		</div>
 
