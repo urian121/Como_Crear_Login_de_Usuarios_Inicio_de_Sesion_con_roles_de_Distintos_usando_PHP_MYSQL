@@ -20,7 +20,7 @@ if(($_SERVER["REQUEST_METHOD"] == "POST")){
 		//$sqlVerificando = ("SELECT * FROM myusers WHERE emailUser COLLATE utf8_bin='".$emailUser."' AND passwordUser COLLATE utf8_bin='".$passwordUser."' ");
 		//Evitar los Select * From xyz
 		//No se debe declarar la session hasta saber si los datos son correctos
-		$sqlVerificandoLogin = ("SELECT IdUser, nombre, nameUser, emailUser, passwordUser  FROM myusers WHERE emailUser COLLATE utf8_bin='$emailUser'");
+		$sqlVerificandoLogin = ("SELECT IdUser, nameUser, emailUser, passwordUser  FROM myusers WHERE emailUser COLLATE utf8_bin='$emailUser'");
 		$resultLogin = mysqli_query($con, $sqlVerificandoLogin) or die(mysqli_error($con));;
 		$numLogin    = mysqli_num_rows($resultLogin);
 
@@ -36,7 +36,6 @@ if(($_SERVER["REQUEST_METHOD"] == "POST")){
 				if(password_verify($passwordUser, $passwordBD)) {
 					session_start(); //Creando la sesion ya que los datos son validos
 					$_SESSION['IdUser'] 	= $rowData['IdUser']; 
-					$_SESSION['nombre']     = $rowData['nombre'];
 					$_SESSION['nameUser']	= $rowData['nameUser'];
 					$_SESSION['emailUser'] 	= $rowData['emailUser'];
 
