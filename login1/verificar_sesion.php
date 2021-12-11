@@ -2,10 +2,6 @@
 error_reporting(0);
 session_start();
 include('config.php');
-if (isset($_SESSION['email']) != "") {
-    header("Location: panel/home.php");
-}
-
 
 $correo 		= $_REQUEST['email'];
 $clave  		= $_REQUEST['password'];
