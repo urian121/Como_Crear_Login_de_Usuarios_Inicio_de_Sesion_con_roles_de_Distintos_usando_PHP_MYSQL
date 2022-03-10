@@ -3,8 +3,11 @@ error_reporting(0);
 session_start();
 include('config.php');
 
-$correo 		= $_REQUEST['email'];
-$clave  		= $_REQUEST['password'];
+$email = filter_var($_REQUEST['email'], FILTER_SANITIZE_EMAIL);
+if (filter_var($correo, FILTER_VALIDATE_EMAIL)) {
+    $correo 	= ($_REQUEST['email']);
+}
+$clave  		= trim($_REQUEST['password']);
 
 $sqlVerificando = ("SELECT * FROM logintwo WHERE email='".$correo."' AND password='".$clave."' ");
 $QueryResul = mysqli_query($con,$sqlVerificando);
