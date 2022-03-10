@@ -5,8 +5,13 @@ if(($_SERVER["REQUEST_METHOD"] == "POST")){
 		$sesionDesde   = date("Y-m-d H:i:A");
 
 		//Evitar recibir las variables por metodo $_REQUEST['xxx'];
-		$emailUser     = ($_POST['emailUser']);
-		$passwordUser  = ($_POST["passwordUser"]); 
+		//Limpiando variables para evitar inyeccion SQL
+		$email = filter_var($_REQUEST['emailUser'], FILTER_SANITIZE_EMAIL);
+		if (filter_var($correo, FILTER_VALIDATE_EMAIL)) {
+		    $emailUser 	= ($_REQUEST['emailUser']);
+		}
+		$passwordUser   = trim($_REQUEST['passwordUser']);
+	
 
 		/*
 		https://bugs.mysql.com/bug.php?id=71939
