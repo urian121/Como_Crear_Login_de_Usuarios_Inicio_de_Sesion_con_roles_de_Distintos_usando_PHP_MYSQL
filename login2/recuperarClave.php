@@ -6,7 +6,11 @@ $miPassword  = substr( md5(microtime()), 1, $logitudPass);
 
 
 $clave      = $miPassword;
-$correo     = $_REQUEST['email'];
+$email = filter_var($_REQUEST['email'], FILTER_SANITIZE_EMAIL);
+if (filter_var($correo, FILTER_VALIDATE_EMAIL)) {
+    $correo 	= ($_REQUEST['email']);
+}
+
 $consulta   = mysqli_query ($con, "SELECT * FROM clientes WHERE email ='".$correo."'");
 $cant = mysqli_num_rows($consulta);
 if($cant ==0){ 
