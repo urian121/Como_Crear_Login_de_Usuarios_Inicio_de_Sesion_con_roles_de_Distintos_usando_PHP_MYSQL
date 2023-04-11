@@ -4,7 +4,7 @@ session_start();
 include('config.php');
 
 $email = filter_var($_REQUEST['email'], FILTER_SANITIZE_EMAIL);
-if (filter_var($correo, FILTER_VALIDATE_EMAIL)) {
+if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $correo 	= ($_REQUEST['email']);
 }
 $clave  		= trim($_REQUEST['password']);
