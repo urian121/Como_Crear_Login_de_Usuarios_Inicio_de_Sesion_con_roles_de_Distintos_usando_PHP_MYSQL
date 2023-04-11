@@ -7,7 +7,7 @@ if(($_SERVER["REQUEST_METHOD"] == "POST")){
 		//Evitar recibir las variables por metodo $_REQUEST['xxx'];
 		//Limpiando variables para evitar inyeccion SQL
 		$email = filter_var($_REQUEST['emailUser'], FILTER_SANITIZE_EMAIL);
-		if (filter_var($correo, FILTER_VALIDATE_EMAIL)) {
+		if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 		    $emailUser 	= ($_REQUEST['emailUser']);
 		}
 		$passwordUser   = trim($_REQUEST['passwordUser']);
