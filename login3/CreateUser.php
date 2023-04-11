@@ -7,7 +7,11 @@ if(isset($_POST["submit"]) && $_SERVER["REQUEST_METHOD"] == "POST"){
 	date_default_timezone_set("America/Bogota");
 	$createUser              = date("Y-m-d H:i:A");
 
-	$PasswordHash = password_hash($passwordUser, PASSWORD_BCRYPT); //Incriptando clave,
+	/**
+	 * password_hash es una función de PHP que se utiliza para cifrar contraseñas 
+	 * de manera segura antes de almacenarlas en una base de datos.
+	 */
+	$PasswordHash = password_hash($passwordUser, PASSWORD_BCRYPT); //Encriptando clave,
 	//crea un nuevo hash de contraseña usando un algoritmo de hash fuerte de único sentido.
 
 	/*funcion para capturar la ip del Usuario Logueando*/
